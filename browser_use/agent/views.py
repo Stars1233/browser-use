@@ -39,7 +39,7 @@ class AgentSettings(BaseModel):
 
 	use_vision: bool = True
 	use_vision_for_planner: bool = False
-	save_conversation_path: str | None = None
+	save_conversation_path: str | Path | None = None
 	save_conversation_path_encoding: str | None = 'utf-8'
 	max_failures: int = 3
 	retry_delay: int = 10
@@ -70,9 +70,6 @@ class AgentSettings(BaseModel):
 	planner_interval: int = 1  # Run planner every N steps
 	is_planner_reasoning: bool = False  # type: ignore
 	extend_planner_system_message: str | None = None
-
-	# Playwright script generation setting
-	save_playwright_script_path: str | None = None  # Path to save the generated Playwright script TODO: fix or remove
 
 
 class AgentState(BaseModel):
